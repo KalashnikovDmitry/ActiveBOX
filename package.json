@@ -1,0 +1,16 @@
+{
+  "name": "activebox",
+  "version": "1.0.0",
+  "description": "TMS-activeBOX-Kalashnikov-Dmitry",
+  "source": "src/index.html",
+  "scripts": {
+    "dev": "parcel",
+    "build": "parcel build"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.12.0",
+    "parcel": "^2.12.0"
+  }
+}
