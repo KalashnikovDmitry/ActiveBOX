@@ -8,7 +8,7 @@
 
 @mixin container {
     max-width: 73.125rem;  // max-width: 1170px;
-    padding: 0 0.9375rem;  // padding: 0 15px;
+    padding: 0 .9375rem;  // padding: 0 15px;
     margin: auto;
     position: relative;
     z-index: 20;
@@ -30,9 +30,11 @@
     flex-wrap: wrap;
 }
 
+// HEADER-section ________________________________________ //
+
 @mixin header_bg {
     position: relative;
-    background-image: url('../img/bg-header.png');
+    background-image: url('../img/header/bg-header.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -156,3 +158,27 @@
     padding: 1.5625rem 5.6875rem;
 }
 
+// ________________________________________ HEADER-section //
+
+// FEATURES-section ______________________________________ //
+
+@mixin features_bg {
+    background-color: $_bg_white;
+    padding: 7.25rem 0;
+}
+
+@mixin features_grid_wrap {
+    max-width: 73.125rem;
+    display:grid;
+    border: none;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 5.625rem 1.875rem;
+    text-align: center;
+    margin: auto;
+}
+
+@mixin grid_features_item {
+    margin: auto;
+    width: 23.125rem;
+}

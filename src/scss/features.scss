@@ -1,0 +1,39 @@
+.activebox-features {
+    @include features_bg;
+
+    .features-grid-wrap {
+        @include features_grid_wrap;
+
+        .grid-features-item {
+            @include grid_features_item;
+            
+            .card-features-img {
+                width: 6.25rem;
+                height: 6.25rem;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto 1.8125rem;
+            }
+
+            .card-features-title {
+                font-size: $_24px;
+                font-weight: $_black;
+                text-transform: uppercase;
+                color: $_title_dark_grey;
+                line-height: 4.5rem;
+                margin-bottom: 1.276875rem;
+            }
+
+            .card-features-description {
+
+                p {
+                    font-size: $_18px;
+                    font-weight: $_regular;
+                    color: $_text_grey;
+                }
+            }          
+        }
+    }
+}
