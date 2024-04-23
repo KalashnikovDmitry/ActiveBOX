@@ -9,7 +9,7 @@
 @mixin container {
     max-width: 73.125rem;  // max-width: 1170px;
     padding: 0 .9375rem;  // padding: 0 15px;
-    margin: auto;
+    margin: 0 auto;
     position: relative;
     z-index: 20;
 }
@@ -51,6 +51,24 @@
         background-color: $_header_mask_blue;
         z-index: 5;
     }
+}
+
+@mixin header_nav_wrap {
+    @include flex_row;
+    justify-content: space-between;
+    margin-bottom: 8.125rem;
+
+    &::after {
+        @include wrap_line;
+    }
+}
+
+@mixin wrap_line {
+    content: '';
+    width: 100%;
+    height: 0.0625rem;
+    background-color: $_bd_light_grey;
+    display: block;
 }
 
 @mixin mb_logo {
@@ -95,17 +113,7 @@
         border-bottom: $_nav_active_bd;
         color: $_link_hover_active_red;
     }
-}
-
-@mixin wrap_line {
-    content: '';
-    width: 100%;
-    height: 0.0625rem;
-    background-color: $_bd_light_grey;
-    display: block;
-    margin: 0 0 8.125rem;
-    //2.243125rem
-}
+}  
 
 @mixin list {
     @include flex_row();
@@ -168,17 +176,47 @@
 }
 
 @mixin features_grid_wrap {
-    max-width: 73.125rem;
     display:grid;
-    border: none;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 5.625rem 1.875rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5.625rem 1.875rem;
     text-align: center;
     margin: auto;
 }
 
 @mixin grid_features_item {
     margin: auto;
-    width: 23.125rem;
+    width: 22.5rem;
 }
+
+@mixin card-features-img {
+    width: 6.25rem;
+    height: 6.25rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.8125rem;
+}
+
+@mixin card-features-title {
+    font-size: $_24px;
+    font-weight: $_black;
+    text-transform: uppercase;
+    color: $_title_dark_grey;
+    line-height: 4.5rem;
+    margin-bottom: 1.276875rem;
+}
+
+@mixin card-features-description-p {
+    font-size: $_18px;
+    font-weight: $_regular;
+    color: $_text_grey;
+}
+
+// ________________________________________ FEATURES-section //
+
+// WORK-section ______________________________________ //
+
+
+
+// ______________________________________ WORK-section //

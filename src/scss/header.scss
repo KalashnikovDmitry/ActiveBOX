@@ -2,9 +2,7 @@
     @include header_bg;
 
     .header-nav-wrap {
-        @include flex_row;
-        justify-content: space-between;
-    
+        @include header_nav_wrap;
         
         .logo {
             @include mb_logo;
@@ -15,6 +13,8 @@
         }
 
         .nav-header {
+            margin-top: .25rem;
+
             .nav-list {
                 @include list;
 
@@ -25,10 +25,6 @@
                     }
                 }
             }
-        }
-
-        &::after {
-            @include wrap_line;
         }
     }
 
