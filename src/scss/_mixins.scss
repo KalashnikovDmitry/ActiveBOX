@@ -1,0 +1,289 @@
+@mixin html_body_content {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+@mixin container {
+    max-width: 73.125rem;  // max-width: 1170px;
+    padding: 0 .9375rem;  // padding: 0 15px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 20;
+}
+
+@mixin html_font_family {
+    font-family: $_raleway, $_font_awesome_6_free, $_sans_serif;
+}
+
+@mixin flex_row {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+@mixin flex_column {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+@mixin bg_options {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+// HEADER-section ________________________________________ //
+
+@mixin header_bg {
+    @include bg_options;
+    position: relative;
+    background-image: url('../img/header/bg-header.png');
+    padding: 2.3975rem 0 7.5rem;
+
+    &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: $_header_mask_blue;
+        z-index: 5;
+    }
+}
+
+@mixin header_nav_wrap {
+    @include flex_row;
+    justify-content: space-between;
+    margin-bottom: 8.125rem;
+
+    &::after {
+        @include wrap_line;
+    }
+}
+
+@mixin wrap_line {
+    content: '';
+    width: 100%;
+    height: 0.0625rem;
+    background-color: $_bd_light_grey;
+    display: block;
+}
+
+@mixin mb_logo {
+    margin-bottom: 2.243125rem;
+}
+
+@mixin logo_title {
+    font-size: $_36px;
+    font-weight: $_bold;
+    text-transform: uppercase;
+    color: $_logo_grey;
+
+    &::after {
+        content: 'box';
+        color: $_bg_white;
+        font-weight: $_logo_light;
+        margin-left: -.625rem;
+    }
+}
+
+@mixin nav_item {
+    width: 8.375rem;
+    line-height: 1.75rem;
+}
+
+@mixin link_nav_item {
+    font-size: $_13px;
+    font-weight: $_bold;
+    color: $_bg_white;
+    text-transform: uppercase;
+    text-align: center;
+    transition: 0.1s;
+
+    &:hover {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-bottom: $_nav_hover_bd;
+    }
+
+    &:active {
+        border-bottom: $_nav_active_bd;
+        color: $_link_hover_active_red;
+    }
+}  
+
+@mixin list {
+    @include flex_row();
+    justify-content: space-between;
+    text-align: center;
+    height: 100%;
+}
+
+@mixin main_title {
+    font-size: $_64px;
+    font-weight: $_black;
+    text-align: center;
+    color: $_bg_white;
+    text-transform: uppercase;
+    margin-bottom: 1.964375rem;
+}
+
+@mixin p_header_main_description {
+    font-size: $_24px;
+    font-weight: $_regular;
+    text-align: center;
+    color: $_bg_white;
+    margin-bottom: 4.973125rem;
+}
+
+@mixin header_main_link {
+    width: 23.125rem;
+    margin: auto;
+    text-align: center;
+    line-height: 5rem;
+    border: none;
+    background-color: $_link_light_red;
+    transition: 0.3s;
+
+    &:hover {
+        background-color: $_link_hover_active_red;
+    }
+
+    &:active {
+        background-color: $_link_light_red;
+        box-shadow: 0.25rem 0.25rem 1.875rem $_link_light_red;
+    }
+}
+
+@mixin a_header_main_link {
+    font-size: $_24px;
+    font-weight: $_black;
+    text-transform: uppercase;
+    color: $_bg_white;
+    padding: 1.5625rem 5.6875rem;
+}
+
+// ________________________________________ HEADER-section //
+
+// FEATURES-section ______________________________________ //
+
+@mixin features_bg {
+    background-color: $_bg_white;
+    padding: 7.25rem 0;
+}
+
+@mixin features_grid_wrap {
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5.625rem 1.875rem;
+    text-align: center;
+    margin: auto;
+}
+
+@mixin grid_features_item {
+    margin: auto;
+    width: 22.5rem;
+}
+
+@mixin card_features_img {
+    width: 6.25rem;
+    height: 6.25rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.8125rem;
+}
+
+@mixin card_features_title {
+    font-size: $_24px;
+    font-weight: $_black;
+    text-transform: uppercase;
+    color: $_title_dark_grey;
+    line-height: 4.5rem;
+    margin-bottom: 1.276875rem;
+}
+
+@mixin card_features_description_p {
+    font-size: $_18px;
+    font-weight: $_regular;
+    color: $_text_grey;
+}
+
+// ________________________________________ FEATURES-section //
+
+// WORK-section ______________________________________ //
+
+@mixin work_grid {
+    display:grid;
+    grid-template-columns: repeat(4, 378px);
+    grid-gap: .1875rem .125rem;
+    margin: auto;
+    justify-content: center;
+}
+
+@mixin work_item {
+    width: 23.625rem;
+    height: 21.25rem;
+    position: relative;
+    z-index: 10;
+}
+
+@mixin work_item_a {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+        background-color: $_img_hover_red;
+
+        .item-main {
+            display: block;
+        }
+    }
+
+    &:active {
+        background-color: $_img_active_red;
+
+        .item-main {
+            display: block;
+        }
+    }
+}
+
+@mixin item_main_dsp {
+    display: none;
+}
+
+@mixin i_title {
+    font-size: $_24px;
+    font-weight: $_black;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 1.25rem;
+    color: $_bg_white;
+}
+
+@mixin i_descrip {
+    font-size: $_18px;
+    font-weight: $_regular;
+    text-align: center;
+    color: $_bg_white;
+}
+
+
+
+// ______________________________________ WORK-section //
