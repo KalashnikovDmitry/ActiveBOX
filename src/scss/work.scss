@@ -1,4 +1,5 @@
 .activebox-work {
+    background-color: $_bg_white;
 
     .work-grid {
         @include work_grid;

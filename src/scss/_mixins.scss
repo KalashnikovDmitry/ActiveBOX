@@ -1,3 +1,5 @@
+// ALL-options-of-HTML-document _______________________________ //
+
 @mixin html_body_content {
     margin: 0;
     padding: 0;
@@ -35,6 +37,49 @@
     background-size: cover;
     background-position: center;
 }
+
+@mixin social_item {
+    width: 2.4375rem;
+    height: 2.4375rem;
+    border: $_icon_bd;
+}
+
+@mixin social_brands {
+    font-size: $_18px;
+    color: $_icon_bd_grey;
+    transition: 0.2s;
+
+    &:hover {
+        transform: scale(1.6);
+    }
+
+    &:active {
+        transform: scale(2);
+    }
+}
+
+@mixin facebook_hover {
+
+    &:hover {
+        color: $_facebook;
+    }
+}
+
+@mixin x_twitter_hover {
+
+    &:hover {
+        color: $_x_twitter;
+    }
+}
+
+@mixin linkedin_hover {
+
+    &:hover {
+        color: $_linkedin;
+    }
+}
+
+// _______________________________ ALL-options-of-HTML-document //
 
 // HEADER-section ________________________________________ //
 
@@ -223,7 +268,7 @@
 
 @mixin work_grid {
     display:grid;
-    grid-template-columns: repeat(4, 378px);
+    grid-template-columns: repeat(4, 23.625rem);
     grid-gap: .1875rem .125rem;
     margin: auto;
     justify-content: center;
@@ -284,6 +329,82 @@
     color: $_bg_white;
 }
 
-
-
 // ______________________________________ WORK-section //
+
+// TEAM-section ______________________________________ //
+
+@mixin team_section {
+    background-color: $_bg_white;
+    padding: 7.125rem 0;
+}
+
+@mixin team_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 16.25rem);
+    grid-column-gap: 1.875rem;
+    justify-content: center;
+}
+
+@mixin member_photo {
+    width: 16.25rem;
+    height: 16.25rem;
+    border: none;
+    margin-bottom: 1.875rem;
+}
+
+@mixin member_photo_img {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+}
+
+@mixin member_name {
+    margin-bottom: 1.11625rem;  
+}
+
+@mixin member_name_h2 {
+    font-size: $_24px;
+    font-weight: $_bold;
+    color: $_title_dark_grey;
+    text-align: left;
+    margin-bottom: .33125rem;
+}
+
+@mixin member_name_p {
+    font-size: $_18px;
+    font-weight: $_regular;
+    color: $_link_light_red;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+@mixin member_description {
+    width: 100%;
+    margin-bottom: 2.36625rem;
+}
+
+@mixin member_description_p {
+    font-size: $_18px;
+    font-weight: $_regular;
+    color: $_text_grey;
+    text-align: left;
+}
+
+@mixin team_social_item {
+    margin-right: .375rem;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+@mixin social_item_a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+// ______________________________________ TEAM-section //

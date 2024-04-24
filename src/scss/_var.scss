@@ -15,6 +15,9 @@ $_footer_text_grey: #808080;
 $_icon_bd_grey: rgba(198, 203, 205, 1);
 $_title_black: #000;
 $_link_hover_active_red: #E71414;
+$_facebook: rgb(66, 103, 178);
+$_x_twitter: #14171A;
+$_linkedin: #0e76a8;
 
 // Добавить цвета для Testimonials   #7E5D6F  #5C3249   //
 
@@ -43,3 +46,4 @@ $_logo_light: 200;
 // Border //
 $_nav_hover_bd: 0.1875rem solid $_bd_light_grey;
 $_nav_active_bd: 0.1875rem solid $_link_hover_active_red;
+$_icon_bd: .0625rem solid $_icon_bd_grey;

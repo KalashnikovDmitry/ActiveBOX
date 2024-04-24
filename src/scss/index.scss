@@ -4,6 +4,7 @@
 @import './header.scss';
 @import './features.scss';
 @import './work.scss';
+@import './our-team.scss';
 
 * {
     @include html_body_content;
@@ -15,5 +16,13 @@ html {
 
 .container {
     @include container;
+}
+
+.social-item {
+    @include social_item;
+}
+
+.fa-brands {
+    @include social_brands;
 }
 
