@@ -1,0 +1,54 @@
+.activebox-header {
+    @include header_bg;
+
+    .header-nav-wrap {
+        @include header_nav_wrap;
+        
+        .logo {
+            @include mb_logo;
+
+            .logo-title {
+               @include logo_title;
+            } 
+        }
+
+        .nav-header {
+            margin-top: .25rem;
+
+            .nav-list {
+                @include list;
+
+                .nav-item {
+                    @include nav_item;
+                    a {
+                        @include link_nav_item;
+                    }
+                }
+            }
+        }
+    }
+
+    .header-main-wrap {
+        
+        .main-title {
+            @include main_title;
+        }
+
+        .header-main-description {
+            p {
+                @include p_header_main_description;
+            }
+        }
+
+        .header-main-link {
+            @include header_main_link;
+
+            a {
+                @include a_header_main_link;
+            }
+        }
+    }
+}
+
+
+

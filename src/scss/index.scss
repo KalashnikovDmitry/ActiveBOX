@@ -1,0 +1,28 @@
+@import './var';
+@import './mixins';
+@import './cdn.scss';
+@import './header.scss';
+@import './features.scss';
+@import './work.scss';
+@import './our-team.scss';
+
+* {
+    @include html_body_content;
+}
+
+html {
+    @include html_font_family;
+}
+
+.container {
+    @include container;
+}
+
+.social-item {
+    @include social_item;
+}
+
+.fa-brands {
+    @include social_brands;
+}
+
