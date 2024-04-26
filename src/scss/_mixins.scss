@@ -54,7 +54,7 @@
     }
 
     &:active {
-        transform: scale(2);
+        transform: scale(1.7);
     }
 }
 
@@ -407,3 +407,56 @@
 }
 
 // ______________________________________ TEAM-section //
+
+// TESTIMONIALS-section ______________________________________ //
+
+
+
+// ______________________________________ TESTIMONIALS-section //
+
+// DOWNLOAD-section ______________________________________ //
+
+@mixin activebox_download_bg {
+    background-color: $_bg_white;
+    padding: 7.125rem 0;
+}
+
+@mixin download_main_title {
+    font-size: $_30px;
+    font-weight: $_medium;
+    text-align: center;
+    line-height: 4.375rem;
+}
+
+@mixin download_second_title {
+    font-size: $_18px;
+    font-weight: $_bold;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 2.981875rem;
+}
+
+// ______________________________________ DOWNLOAD-section //
+
+// ABOUT-section ______________________________________ //
+
+@mixin about_title {
+    font-size: $_18px;
+    font-weight: $_bold;
+    color: $_bg_white;
+    text-transform: uppercase;
+}
+
+@mixin about_text {
+    font-size: $_18px;
+    font-weight: $_regular;
+    color: $_bg_white;
+}
+
+// ______________________________________ ABOUT-section //
+
+// COPYRIGHT-section ______________________________________ //
+
+
+
+// ______________________________________ COPYRIGHT-section //

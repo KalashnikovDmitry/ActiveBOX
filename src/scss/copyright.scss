@@ -1,0 +1,24 @@
+.activebox-copyright {
+    background-color: $_footer_dark_blue;
+    padding: 24px 0;
+
+    .copyright-wrap {
+
+        .copyright-description {
+            margin: auto;
+            width: 370px;
+            text-align: center;
+
+            p {
+                font-size: $_18px;
+                font-weight: $_regular;
+                color: $_footer_text_grey;
+
+                span {
+                    color: $_bg_white;
+                }
+            }
+        }
+    }
+}
+

@@ -1,0 +1,74 @@
+.activebox-about {
+    background-color: $_footer_light_blue;
+    padding: 71.14px 0 67.14px;
+
+    .about-wrap {
+        @include flex_row;
+        justify-content: center;
+        margin-bottom: 67px;
+
+        .location {
+            width: 370px;
+            text-align: center;
+
+            .about-title {
+                @include about_title;
+                margin-bottom: 29px;
+            }
+
+            .about-text {
+                @include about_text;
+            }
+        }
+
+        .share {
+            width: 370px;
+            text-align: center;
+
+            .about-title {
+                @include about_title;
+                margin-bottom: 29px;
+            }
+
+            .member-social {
+                @include flex_row;
+                justify-content: center;
+
+                .social-item {
+                    @include team_social_item;
+                    margin-right: 27px;
+
+                    a {
+                        @include social_item_a;
+
+                        .fa-square-facebook {
+                            @include facebook_hover;
+                        }
+                    
+                        .fa-square-x-twitter {
+                            @include x_twitter_hover;
+                        }
+                    
+                        .fa-linkedin {
+                            @include linkedin_hover;
+                        }
+                    }
+                }
+            }
+        }
+
+        .about {
+            width: 370px;
+            text-align: center;
+
+            .about-title {
+                @include about_title;
+                margin-bottom: 29px;
+            }
+
+            .about-text {
+                @include about_text;
+            }
+        }
+    }
+}
