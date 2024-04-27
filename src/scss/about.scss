@@ -1,19 +1,14 @@
 .activebox-about {
-    background-color: $_footer_light_blue;
-    padding: 71.14px 0 67.14px;
+    @include activebox_about_bg;
 
     .about-wrap {
-        @include flex_row;
-        justify-content: center;
-        margin-bottom: 67px;
+        @include about_wrap;
 
         .location {
-            width: 370px;
-            text-align: center;
+            @include about_location_share;
 
             .about-title {
                 @include about_title;
-                margin-bottom: 29px;
             }
 
             .about-text {
@@ -22,12 +17,10 @@
         }
 
         .share {
-            width: 370px;
-            text-align: center;
+            @include about_location_share;
 
             .about-title {
                 @include about_title;
-                margin-bottom: 29px;
             }
 
             .member-social {
@@ -36,7 +29,7 @@
 
                 .social-item {
                     @include team_social_item;
-                    margin-right: 27px;
+                    margin-right: 1.6875rem;
 
                     a {
                         @include social_item_a;
@@ -53,17 +46,19 @@
                             @include linkedin_hover;
                         }
                     }
+
+                    &:hover {
+                        background-color: $_bg_white;
+                    }
                 }
             }
         }
 
         .about {
-            width: 370px;
-            text-align: center;
+            @include about_location_share;
 
             .about-title {
                 @include about_title;
-                margin-bottom: 29px;
             }
 
             .about-text {

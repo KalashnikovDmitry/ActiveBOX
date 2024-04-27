@@ -1,22 +1,14 @@
 .activebox-copyright {
-    background-color: $_footer_dark_blue;
-    padding: 24px 0;
+    @include activebox_copyright_bg;
+    
+    .copyright-description {
+        @include copyright_description_block;
 
-    .copyright-wrap {
+        p {
+            @include p_description_copyright;
 
-        .copyright-description {
-            margin: auto;
-            width: 370px;
-            text-align: center;
-
-            p {
-                font-size: $_18px;
-                font-weight: $_regular;
-                color: $_footer_text_grey;
-
-                span {
-                    color: $_bg_white;
-                }
+            span {
+                @include span_description_copyright;
             }
         }
     }

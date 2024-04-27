@@ -440,11 +440,28 @@
 
 // ABOUT-section ______________________________________ //
 
+@mixin activebox_about_bg {
+    background-color: $_footer_light_blue;
+    padding: 4.44625rem 0 4.19625rem;
+}
+
+@mixin about_wrap {
+    @include flex_row;
+    justify-content: center;
+    margin-bottom: 4.1875rem;
+}
+
+@mixin about_location_share {
+    width: 23.125rem;
+    text-align: center;
+}
+
 @mixin about_title {
     font-size: $_18px;
     font-weight: $_bold;
     color: $_bg_white;
     text-transform: uppercase;
+    margin-bottom: 1.8125rem;
 }
 
 @mixin about_text {
@@ -457,6 +474,24 @@
 
 // COPYRIGHT-section ______________________________________ //
 
+@mixin activebox_copyright_bg {
+    background-color: $_footer_dark_blue;
+    padding: 1.5rem 0;
+}
 
+@mixin copyright_description_block {
+    margin: auto;
+    @include about_location_share;
+}
+
+@mixin p_description_copyright {
+    font-size: $_18px;
+    font-weight: $_regular;
+    color: $_footer_text_grey;
+}
+
+@mixin span_description_copyright {
+    color: $_bg_white;
+}
 
 // ______________________________________ COPYRIGHT-section //
