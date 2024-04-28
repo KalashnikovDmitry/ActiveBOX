@@ -1,0 +1,67 @@
+.activebox-testimonials {
+
+    .swiper {
+        max-width: max-content;
+        margin: 0 auto;
+        padding: 0;
+
+        .swiper-wrapper {
+            margin-bottom: 31px;
+
+            .swiper-slide {
+                @include flex_row;
+                width: 100%;
+                height: 490px;
+                overflow: hidden;
+
+                .img-slide {
+                    width: 50%;
+
+                    img {
+                        object-fit: cover;
+                        object-position: center;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                .description-slide {
+                    width: 50%;
+                    background-color: $_bg_swapper;
+
+                    .description-wrap {
+                        margin: 116px auto;
+                        width: 471px;
+
+                        .description-title-slide {
+                            font-family: $_cardo;
+                            font-size: $_36px;
+                            font-style: italic;
+                            color: $_bg_white;
+                            padding: 27px 0;
+                        }
+    
+                        .main-description-slide {
+                            font-size: $_13px;
+                            font-weight: $_bold;
+                            color: $_bg_white;
+                            text-transform: uppercase;
+                        }
+                    }
+                }
+
+            }
+        }
+
+
+        .swiper-pagination {
+            bottom: 0;
+
+            .swiper-pagination-bullet {
+                background-color: $_bg_bullet_swapper;
+                font-size: $_13px;
+            }
+        }
+    }
+
+}
