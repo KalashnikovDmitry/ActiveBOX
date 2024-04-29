@@ -3,6 +3,8 @@
 
     .work-grid {
         @include work_grid;
+        margin: 0 auto;
+        padding: 0;
 
         .work-item {
             @include work_item;

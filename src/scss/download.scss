@@ -1,0 +1,23 @@
+.activebox-download {
+    @include activebox_download_bg;
+
+    .download-wrap {
+        
+        .download-main-title {
+            @include download_main_title;
+        }
+
+        .download-second-title {
+            @include download_second_title;
+        }
+
+        .download-link {
+            @include header_main_link;
+
+            a {
+                @include a_header_main_link;
+                padding: 1.5625rem 4.6875rem;
+            }
+        }
+    }
+}

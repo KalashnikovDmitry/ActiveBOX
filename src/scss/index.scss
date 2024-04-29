@@ -5,6 +5,10 @@
 @import './features.scss';
 @import './work.scss';
 @import './our-team.scss';
+@import './testimonials.scss';
+@import './download.scss';
+@import './about.scss';
+@import './copyright.scss';
 
 * {
     @include html_body_content;

@@ -18,6 +18,9 @@ $_link_hover_active_red: #E71414;
 $_facebook: rgb(66, 103, 178);
 $_x_twitter: #14171A;
 $_linkedin: #0e76a8;
+$_bg_swapper: rgba(92, 50, 73, 1);
+$_bg_bullet_swapper: rgba(126, 93, 111, 1);
+
 
 // Добавить цвета для Testimonials   #7E5D6F  #5C3249   //
 
@@ -26,6 +29,7 @@ $_linkedin: #0e76a8;
 $_raleway: 'Raleway';
 $_sans_serif: 'sans-serif';
 $_font_awesome_6_free: 'Font Awesome 6 Free';
+$_cardo: 'Cardo';
 
 // Font-size //
 
@@ -34,7 +38,8 @@ $_36px: 2.25rem;
 $_30px: 1.875rem;
 $_24px: 1.5rem;
 $_18px: 1.125rem;
-$_13px: 0.8125rem;
+$_14px: .875rem;
+$_13px: .8125rem;
 
 // Font-weight //
 
@@ -42,6 +47,8 @@ $_black: 900;
 $_bold: 700;
 $_regular: 400;
 $_logo_light: 200;
+$_medium: 500;
+
 
 // Border //
 $_nav_hover_bd: 0.1875rem solid $_bd_light_grey;

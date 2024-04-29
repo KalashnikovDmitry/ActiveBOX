@@ -17,7 +17,7 @@
 }
 
 @mixin html_font_family {
-    font-family: $_raleway, $_font_awesome_6_free, $_sans_serif;
+    font-family: $_raleway, $_font_awesome_6_free, $_cardo, $_sans_serif;
 }
 
 @mixin flex_row {
@@ -54,7 +54,7 @@
     }
 
     &:active {
-        transform: scale(2);
+        transform: scale(1.7);
     }
 }
 
@@ -267,27 +267,26 @@
 // WORK-section ______________________________________ //
 
 @mixin work_grid {
+    max-width: max-content;
     display:grid;
-    grid-template-columns: repeat(4, 23.625rem);
+    grid-template-columns: repeat(4, minmax(23.625rem, 25%));
     grid-gap: .1875rem .125rem;
-    margin: auto;
-    justify-content: center;
 }
 
 @mixin work_item {
     width: 23.625rem;
     height: 21.25rem;
-    position: relative;
-    z-index: 10;
+    // position: relative;
+    // z-index: 10;
 }
 
 @mixin work_item_a {
     width: 100%;
     height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 5;
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    // z-index: 5;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -340,7 +339,8 @@
 
 @mixin team_grid {
     display: grid;
-    grid-template-columns: repeat(4, 16.25rem);
+    grid-template-columns: repeat(4, minmax(16.25rem, 25%));
+    // grid-template-columns: repeat(4, 16.25rem);
     grid-column-gap: 1.875rem;
     justify-content: center;
 }
@@ -408,3 +408,91 @@
 }
 
 // ______________________________________ TEAM-section //
+
+// TESTIMONIALS-section ______________________________________ //
+
+
+
+// ______________________________________ TESTIMONIALS-section //
+
+// DOWNLOAD-section ______________________________________ //
+
+@mixin activebox_download_bg {
+    background-color: $_bg_white;
+    padding: 7.125rem 0;
+}
+
+@mixin download_main_title {
+    font-size: $_30px;
+    font-weight: $_medium;
+    text-align: center;
+    line-height: 4.375rem;
+}
+
+@mixin download_second_title {
+    font-size: $_18px;
+    font-weight: $_bold;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 2.981875rem;
+}
+
+// ______________________________________ DOWNLOAD-section //
+
+// ABOUT-section ______________________________________ //
+
+@mixin activebox_about_bg {
+    background-color: $_footer_light_blue;
+    padding: 4.44625rem 0 4.19625rem;
+}
+
+@mixin about_wrap {
+    @include flex_row;
+    justify-content: center;
+    margin-bottom: 4.1875rem;
+}
+
+@mixin about_location_share {
+    width: 23.125rem;
+    text-align: center;
+}
+
+@mixin about_title {
+    font-size: $_18px;
+    font-weight: $_bold;
+    color: $_bg_white;
+    text-transform: uppercase;
+    margin-bottom: 1.8125rem;
+}
+
+@mixin about_text {
+    font-size: $_18px;
+    font-weight: $_regular;
+    color: $_bg_white;
+}
+
+// ______________________________________ ABOUT-section //
+
+// COPYRIGHT-section ______________________________________ //
+
+@mixin activebox_copyright_bg {
+    background-color: $_footer_dark_blue;
+    padding: 1.5rem 0;
+}
+
+@mixin copyright_description_block {
+    margin: auto;
+    @include about_location_share;
+}
+
+@mixin p_description_copyright {
+    font-size: $_18px;
+    font-weight: $_regular;
+    color: $_footer_text_grey;
+}
+
+@mixin span_description_copyright {
+    color: $_bg_white;
+}
+
+// ______________________________________ COPYRIGHT-section //

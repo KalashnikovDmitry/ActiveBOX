@@ -1,0 +1,16 @@
+.activebox-copyright {
+    @include activebox_copyright_bg;
+    
+    .copyright-description {
+        @include copyright_description_block;
+
+        p {
+            @include p_description_copyright;
+
+            span {
+                @include span_description_copyright;
+            }
+        }
+    }
+}
+
