@@ -51,6 +51,6 @@ $_medium: 500;
 
 
 // Border //
-$_nav_hover_bd: 0.1875rem solid $_bd_light_grey;
-$_nav_active_bd: 0.1875rem solid $_link_hover_active_red;
-$_icon_bd: .0625rem solid $_icon_bd_grey;
+$_nav_hover_bd: 3px solid $_bd_light_grey;
+$_nav_active_bd: 3px solid $_link_hover_active_red;
+$_icon_bd: 1px solid $_icon_bd_grey;

@@ -1,51 +1,34 @@
 .activebox-testimonials {
 
     .swiper {
-        max-width: max-content;
-        margin: 0 auto;
-        padding: 0;
+        @include swiper_options;
 
         .swiper-wrapper {
-            margin-bottom: 31px;
+            @include swiper_wrap_mb;
 
             .swiper-slide {
-                @include flex_row;
-                width: 100%;
-                height: 490px;
-                overflow: hidden;
+                @include swiper_slide;
 
                 .img-slide {
-                    width: 50%;
+                    @include img_slide;
 
                     img {
-                        object-fit: cover;
-                        object-position: center;
-                        width: 100%;
-                        height: 100%;
+                        @include photo_img_options;
                     }
                 }
 
                 .description-slide {
-                    width: 50%;
-                    background-color: $_bg_swapper;
+                    @include description_slide;
 
                     .description-wrap {
-                        margin: 116px auto;
-                        width: 471px;
+                        @include description_wrap_slide;
 
                         .description-title-slide {
-                            font-family: $_cardo;
-                            font-size: $_36px;
-                            font-style: italic;
-                            color: $_bg_white;
-                            padding: 27px 0;
+                            @include description_title;
                         }
     
                         .main-description-slide {
-                            font-size: $_13px;
-                            font-weight: $_bold;
-                            color: $_bg_white;
-                            text-transform: uppercase;
+                            @include description_p_slide;
                         }
                     }
                 }
@@ -55,11 +38,10 @@
 
 
         .swiper-pagination {
-            bottom: 0;
+            @include swiper_pagination_b;
 
             .swiper-pagination-bullet {
-                background-color: $_bg_bullet_swapper;
-                font-size: $_13px;
+                @include pagination_bullet;
             }
         }
     }

@@ -9,6 +9,10 @@
             
             .card-features-img {
                 @include card_features_img;
+
+                img {
+                    @include photo_img_options;
+                }
             }
 
             .card-features-title {
