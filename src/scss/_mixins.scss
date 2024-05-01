@@ -9,11 +9,19 @@
 }
 
 @mixin container {
-    max-width: 73.125rem;  // max-width: 1170px;
-    padding: 0 .9375rem;  // padding: 0 15px;
+    max-width: 1170px;
+    padding: 0 .9375rem;
     margin: 0 auto;
     position: relative;
     z-index: 20;
+
+    @media (max-width: 1024px) {
+        max-width: 984px;
+    }
+
+    @media (max-width: 320px) {
+        max-width: 280px;
+    }
 }
 
 @mixin html_font_family {
@@ -39,8 +47,8 @@
 }
 
 @mixin social_item {
-    width: 2.4375rem;
-    height: 2.4375rem;
+    width: 39px;
+    height: 39px;
     border: $_icon_bd;
 }
 
@@ -79,6 +87,13 @@
     }
 }
 
+@mixin photo_img_options {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+}
+
 // _______________________________ ALL-options-of-HTML-document //
 
 // HEADER-section ________________________________________ //
@@ -115,7 +130,7 @@
 @mixin wrap_line {
     content: '';
     width: 100%;
-    height: 0.0625rem;
+    height: 1px;
     background-color: $_bd_light_grey;
     display: block;
 }
@@ -139,8 +154,8 @@
 }
 
 @mixin nav_item {
-    width: 8.375rem;
-    line-height: 1.75rem;
+    width: 134px;
+    line-height: 28px;
 }
 
 @mixin link_nav_item {
@@ -189,10 +204,10 @@
 }
 
 @mixin header_main_link {
-    width: 23.125rem;
+    width: 370px;
     margin: auto;
     text-align: center;
-    line-height: 5rem;
+    line-height: 80px;
     border: none;
     background-color: $_link_light_red;
     transition: 0.3s;
@@ -203,9 +218,19 @@
 
     &:active {
         background-color: $_link_light_red;
-        box-shadow: 0.25rem 0.25rem 1.875rem $_link_light_red;
+        box-shadow: 4px 4px 30px $_link_light_red;
+    }
+
+    @media (max-width: 1024px) {
+        width: 314px;
+    }
+
+    @media (max-width: 320px) {
+        width: 280px;
+        line-height: 60px;
     }
 }
+
 
 @mixin a_header_main_link {
     font-size: $_24px;
@@ -213,6 +238,14 @@
     text-transform: uppercase;
     color: $_bg_white;
     padding: 1.5625rem 5.6875rem;
+
+    @media (max-width: 1024px) {
+        padding: 1.5625rem 3.75rem;
+    }
+
+    @media (max-width: 320px) {
+        padding: .9375rem 2.8125rem;
+    }
 }
 
 // ________________________________________ HEADER-section //
@@ -222,29 +255,59 @@
 @mixin features_bg {
     background-color: $_bg_white;
     padding: 7.25rem 0;
+
+    @media (max-width: 1024px) {
+        padding: 5rem 0;
+    }
+
+    @media (max-width: 320px) {
+        padding: 2.5rem 0;
+    }
 }
 
 @mixin features_grid_wrap {
     display:grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 5.625rem 1.875rem;
+    grid-template-columns: repeat(3, minmax(360px, 1fr));
+    grid-gap: 90px 30px;
     text-align: center;
     margin: auto;
+
+    @media (max-width: 1024px) {
+        grid-template-columns: repeat(3, minmax(305px, 1fr));
+        grid-gap: 49px 20px;
+    }
+
+    @media (max-width: 320px) {
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        row-gap: 49px ;
+    }
 }
 
 @mixin grid_features_item {
     margin: auto;
-    width: 22.5rem;
+    width: 100%;
 }
 
 @mixin card_features_img {
-    width: 6.25rem;
-    height: 6.25rem;
+    width: 100px;
+    height: 100px;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 1.8125rem;
+
+    @media (max-width: 1024px) {
+        width: 85px;
+        height: 85px;
+        margin-bottom: 1.47rem;
+    }
+
+    @media (max-width: 320px) {
+        width: 75px;
+        height: 75px;
+        margin-bottom: 1.34rem;
+    }
 }
 
 @mixin card_features_title {
@@ -252,41 +315,186 @@
     font-weight: $_black;
     text-transform: uppercase;
     color: $_title_dark_grey;
-    line-height: 4.5rem;
+    line-height: 72px;
     margin-bottom: 1.276875rem;
+
+    @media (max-width: 1024px) {
+        font-size: $_18px;
+        line-height: 60px;
+        margin-bottom: .25rem;
+    }
+
+    @media (max-width: 320px) {
+        font-size: $_18px;
+        line-height: 50px;
+        margin-bottom: 0;
+    }
+}
+
+@mixin card_features_description {
+    width: 100%;
 }
 
 @mixin card_features_description_p {
     font-size: $_18px;
     font-weight: $_regular;
     color: $_text_grey;
+
+    @media (max-width: 1024px) {
+        font-size: $_14px;
+    }
+
+    @media (max-width: 320px) {
+        font-size: $_14px;
+    }
 }
 
 // ________________________________________ FEATURES-section //
 
-// WORK-section ______________________________________ //
+// WORK-FLEX-section ______________________________________ //
+
+@mixin work_flex_wrap {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    @media (max-width: 320px) {
+        flex-direction: row;
+        }
+}
+
+@mixin work_line {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+
+    @media (max-width: 320px) {
+    flex-direction: column;
+    }
+}
+
+@mixin work_line_item {
+    display: block;
+    width: 380px;
+    height: 340px;
+    border: 1px solid $_bg_white;
+
+    
+    @media (max-width: 1024px) {
+        width: 256px;
+        height: 230px;
+    }
+
+    @media (max-width: 320px) {
+        width: 160px;
+        height: 144px;
+    }
+}
+
+@mixin work_link {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+@mixin title_i_descr {
+    font-size: $_24px;
+    font-weight: $_black;
+    line-height: 60px;
+    margin-bottom: 1.25rem;
+    color: $_bg_white;
+    text-transform: uppercase;
+
+    @media (max-width: 1024px) {
+        font-size: $_18px;
+        line-height: 40px;
+        margin-bottom: .8rem;
+    }
+
+    @media (max-width: 320px) {
+        font-size: $_18px;
+        line-height: 25px;
+        margin-bottom: .29rem;
+    }
+}
+
+@mixin sub_i_descr {
+    font-size: $_18px;
+    font-weight: $_regular;
+    color: $_bg_white;
+
+    @media (max-width: 1024px) {
+        font-size: $_14px;
+    }
+
+    @media (max-width: 320px) {
+        font-size: $_14px;
+    }
+}
+
+@mixin description_block {
+    display: block;
+}
+
+@mixin description_none {
+    display: none;
+}
+
+@mixin link_hover_bg {
+    background-color: $_img_hover_red;
+}
+
+@mixin link_active_bg {
+    background-color: $_img_active_red;
+}
+
+// ______________________________________ WORK-FLEX-section //
+
+// WORK-GRID-section ______________________________________ //
 
 @mixin work_grid {
     max-width: max-content;
     display:grid;
-    grid-template-columns: repeat(4, minmax(23.625rem, 25%));
-    grid-gap: .1875rem .125rem;
+    grid-template-columns: repeat(4, minmax(378px, 100%));
+    grid-template-rows: repeat(2, 340px);
+    grid-gap: 3px 2px;
+
+    @media (max-width: 1024px) {
+        grid-template-columns: repeat(4, minmax(236px, 100%));
+        grid-template-rows: repeat(2, 210px);
+        grid-gap: 3px 2px;
+    }
+
+    @media (max-width: 320px) {
+        grid-template-columns: repeat(2, minmax(160px, 100%));
+        grid-template-rows: repeat(4, 144px);
+        grid-gap: 1px 1px;
+    }
 }
 
 @mixin work_item {
-    width: 23.625rem;
-    height: 21.25rem;
-    // position: relative;
-    // z-index: 10;
+    width: 378px;
+    height: 340px;
+
+    @media (max-width: 1024px) {
+        width: 234px;
+        height: 208px;
+    }
+
+    @media (max-width: 320px) {
+        width: 160px;
+        height: 144px;
+    }
 }
 
 @mixin work_item_a {
     width: 100%;
     height: 100%;
-    // position: absolute;
-    // top: 0;
-    // left: 0;
-    // z-index: 5;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -328,28 +536,55 @@
     color: $_bg_white;
 }
 
-// ______________________________________ WORK-section //
+// ______________________________________ WORK-GRID-section //
 
 // TEAM-section ______________________________________ //
 
 @mixin team_section {
     background-color: $_bg_white;
     padding: 7.125rem 0;
+
+    @media (max-width: 1024px) {
+        padding: 4.875rem 0;
+    }
+
+    @media (max-width: 320px) {
+        padding: 2.1875rem 0;
+    }
 }
 
 @mixin team_grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(16.25rem, 25%));
-    // grid-template-columns: repeat(4, 16.25rem);
-    grid-column-gap: 1.875rem;
+    grid-template-columns: repeat(4, minmax(260px, 25%));
+    grid-column-gap: 30px;
     justify-content: center;
+
+    @media (max-width: 1024px) {
+        grid-template-columns: repeat(4, minmax(227px, 25%));
+        grid-column-gap: 25px;
+    }
+
+    @media (max-width: 320px) {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        grid-row-gap: 56px;
+    }
 }
 
 @mixin member_photo {
-    width: 16.25rem;
-    height: 16.25rem;
+    width: 260px;
+    height: 260px;
     border: none;
     margin-bottom: 1.875rem;
+
+    @media (max-width: 1024px) {
+        width: 227px;
+        height: 227px;
+    }
+
+    @media (max-width: 320px) {
+        width: 280px;
+        height: 280px;
+    }
 }
 
 @mixin member_photo_img {
@@ -360,7 +595,15 @@
 }
 
 @mixin member_name {
-    margin-bottom: 1.11625rem;  
+    margin-bottom: 1.11625rem;
+    
+    @media (max-width: 1024px) {
+        margin-bottom: 1.4rem;
+    }
+
+    @media (max-width: 320px) {
+        margin-bottom: 2.4rem;
+    }
 }
 
 @mixin member_name_h2 {
@@ -369,6 +612,17 @@
     color: $_title_dark_grey;
     text-align: left;
     margin-bottom: .33125rem;
+
+    @media (max-width: 1024px) {
+        font-size: $_18px;
+        margin-bottom: .2875rem;
+    }
+
+    @media (max-width: 320px) {
+        font-size: $_18px;
+        margin-bottom: .43rem;
+
+    }
 }
 
 @mixin member_name_p {
@@ -377,11 +631,27 @@
     color: $_link_light_red;
     text-transform: uppercase;
     text-align: left;
+
+    @media (max-width: 1024px) {
+        font-size: $_14px;
+        }
+
+    @media (max-width: 320px) {
+        font-size: $_14px;
+    }
 }
 
 @mixin member_description {
     width: 100%;
     margin-bottom: 2.36625rem;
+
+    @media (max-width: 1024px) {
+        margin-bottom: 2.45rem;
+        }
+
+    @media (max-width: 320px) {
+        margin-bottom: 3.45rem;;
+    }
 }
 
 @mixin member_description_p {
@@ -389,6 +659,14 @@
     font-weight: $_regular;
     color: $_text_grey;
     text-align: left;
+
+    @media (max-width: 1024px) {
+        font-size: $_14px;
+        }
+
+    @media (max-width: 320px) {
+        font-size: $_14px;
+    }
 }
 
 @mixin team_social_item {
@@ -411,7 +689,125 @@
 
 // TESTIMONIALS-section ______________________________________ //
 
+@mixin swiper_options {
+    max-width: max-content;
+    margin: 0 auto;
+    padding: 0;
 
+    @media (max-width: 320px) {
+        max-height: 538px;
+    }
+}
+
+@mixin swiper_wrap_mb {
+    margin-bottom: 1.9375rem;
+
+    @media (max-width: 1024px) {
+        margin-bottom: 1.5rem;
+    }
+
+    @media (max-width: 320px) {
+        margin-bottom: 1.4375rem;
+    }
+}
+
+@mixin swiper_slide {
+    @include flex_row;
+    width: 100%;
+    height: 490px;
+    overflow: hidden;
+
+    @media (max-width: 1024px) {
+        height: 332px;
+    }
+
+    @media (max-width: 320px) {
+        @include flex_column;
+        height: 538px;
+    }
+}
+
+@mixin img_slide {
+    width: 50%;
+
+    @media (max-width: 320px) {
+        width: 100%;
+    }
+}
+
+@mixin description_slide {
+    width: 50%;
+    background-color: $_bg_swapper;
+
+    @media (max-width: 320px) {
+        width: 100%;
+    }
+}
+
+@mixin description_wrap_slide {
+    margin: 7.25rem auto;
+    width: 471px;
+
+    @media (max-width: 1024px) {
+        margin: 2.9375rem auto 6.875rem;
+        width: 330px;
+    }
+
+    @media (max-width: 320px) {
+        margin: 0 auto 5.9375rem;
+        width: 275px;
+    }
+}
+
+@mixin description_title {
+    font-family: $_cardo;
+    font-size: $_36px;
+    font-style: italic;
+    color: $_bg_white;
+    padding: 1.6875rem 0;
+
+    @media (max-width: 1024px) {
+        font-size: $_24px;
+        padding: 1.3125rem 0;
+    }
+
+    @media (max-width: 320px) {
+        font-size: $_24px;
+        padding: 1.8125rem 0;
+        text-align: center;
+    }
+}
+
+@mixin description_p_slide {
+    font-size: $_13px;
+    font-weight: $_bold;
+    color: $_bg_white;
+    text-transform: uppercase;
+
+    @media (max-width: 1024px) {
+        font-size: $_12px;
+    }
+
+    @media (max-width: 320px) {
+        font-size: $_12px;
+        text-align: center;
+    }
+}
+
+@mixin swiper_pagination_b {
+    bottom: 0;
+
+    @media (max-width: 320px){
+        right: 118%;
+        transform: rotate(90deg);
+        bottom: -260px;
+    }
+}
+
+@mixin pagination_bullet {
+    background-color: $_bg_bullet_swapper;
+    font-size: $_13px;
+}
 
 // ______________________________________ TESTIMONIALS-section //
 
@@ -426,7 +822,7 @@
     font-size: $_30px;
     font-weight: $_medium;
     text-align: center;
-    line-height: 4.375rem;
+    line-height: 70px;
 }
 
 @mixin download_second_title {
@@ -449,12 +845,15 @@
 @mixin about_wrap {
     @include flex_row;
     justify-content: center;
-    margin-bottom: 4.1875rem;
 }
 
 @mixin about_location_share {
-    width: 23.125rem;
+    width: 370px;
     text-align: center;
+
+    @media (max-width: 1024px) {
+        width: 315px;
+    }
 }
 
 @mixin about_title {

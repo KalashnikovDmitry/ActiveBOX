@@ -5,4 +5,12 @@ const swiper = new Swiper(".swiper-testimonials", {
     },
     mousewhell: true,
     keyboard: true,
+    breakpoints: {
+      1024: {
+        direction: "horizontal",
+      },
+      320: {
+        direction: "vertical",
+      },
+    }
   });
