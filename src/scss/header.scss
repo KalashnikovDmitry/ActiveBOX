@@ -12,8 +12,29 @@
             } 
         }
 
+        .menu-burger {
+            @include menu_burger;
+
+            .burger-checkbox {
+                @include burger_checkbox;
+            }
+
+            .burger {
+                @include burger;
+            }
+
+            .menu-list {
+                @include menu_list_burger;
+
+                .menu-item {
+                    @include menu_item_burger;
+                }
+            }   
+        }
+
+
         .nav-header {
-            margin-top: .25rem;
+            @include nav_header;
 
             .nav-list {
                 @include list;
@@ -29,7 +50,8 @@
     }
 
     .header-main-wrap {
-        
+        opacity: 0;
+
         .main-title {
             @include main_title;
         }
@@ -47,6 +69,10 @@
                 @include a_header_main_link;
             }
         }
+    }
+
+    .active {
+        opacity: 1;
     }
 }
 

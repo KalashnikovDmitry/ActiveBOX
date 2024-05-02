@@ -115,6 +115,14 @@
         background-color: $_header_mask_blue;
         z-index: 5;
     }
+
+    @media(max-width: 1024px) {
+        padding: 2.25rem 0 7.875rem;
+    }
+
+    @media(max-width: 320px) {
+        padding: 1.3125rem 0 3.25rem;
+    }
 }
 
 @mixin header_nav_wrap {
@@ -124,6 +132,19 @@
 
     &::after {
         @include wrap_line;
+
+        @media(max-width: 320px) {
+            display:none;
+        }
+    }
+
+    @media(max-width: 1024px) {
+        margin-bottom: 9.8125rem;
+    }
+
+    @media(max-width: 320px) {
+        margin-bottom: 3.1075rem;
+        justify-content: space-between;
     }
 }
 
@@ -137,6 +158,14 @@
 
 @mixin mb_logo {
     margin-bottom: 2.243125rem;
+
+    @media(max-width: 1024px) {
+        margin-bottom: 2.3125rem;
+    }
+
+    @media(max-width: 320px) {
+        margin-bottom: 0;
+    }
 }
 
 @mixin logo_title {
@@ -150,12 +179,121 @@
         color: $_bg_white;
         font-weight: $_logo_light;
         margin-left: -.625rem;
+
+        @media(max-width: 320px) {
+            margin-left: -.35rem;
+        }
+    }
+
+    @media(max-width: 320px) {
+        font-size: $_24px;
     }
 }
+
+@mixin menu_burger {
+    width: 55px;
+    height: 55px;
+    display: none;
+
+    @media (max-width: 320px) {
+        display: block;
+    }
+}
+
+@mixin burger_checkbox {
+    position: absolute;
+    visibility: hidden;
+
+    &:checked + .burger::before {
+        top: 9px;
+        transform: rotate(45deg);
+        box-shadow: 0 6px 0 rgba(0,0,0,0);
+        transition: box-shadow .15s, top .3s, transform .3s .15s;
+    }
+
+    &:checked + .burger::after {
+        bottom: 6px;
+        transform: rotate(-45deg);
+        transition: bottom .3s, transform .3s .15s;
+    }
+
+    &:checked ~ .menu-list {
+        transform: translateY(0);
+    }
+}
+
+@mixin burger {
+    cursor: pointer;
+    display: block;
+    position: relative;
+    border: none;
+    background: transparent;
+    width: 24px;
+    height: 18px;
+    margin: 5px auto 0 ;
+
+    &::before, &::after {
+        content: '';
+        left: 0;
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 3px;
+        padding: 0;
+        margin: 0;
+        border-radius: 10px;
+        background-color: $_bg_white;
+        z-index: 15;
+    }
+
+    &::before {
+        top: 0;
+        box-shadow: 0 8px 0 $_bg_white;
+        transition: box-shadow .3s .15s, top .3s .15s, transform .3s;
+    }
+
+    &::after {
+        bottom: 0;
+        transition: bottom .3s .15s, transform .3s;
+    }
+}
+
+@mixin menu_list_burger {
+    top: 0;
+    left: -18;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(-150%);
+    transition: .3s;
+    width: 100%;
+    height: 90%;
+    padding: 0;
+    margin-top: 84px;
+    z-index: 16;
+}
+
+@mixin menu_item_burger {
+    @include link_nav_item;
+    line-height: 63px;
+}
+
+@mixin nav_header {
+    margin-top: .25rem;
+
+    @media(max-width: 320px) {
+        display: none;
+    }
+}
+
 
 @mixin nav_item {
     width: 134px;
     line-height: 28px;
+
+    @media(max-width: 1024px) {
+        width: 112px;
+    }
 }
 
 @mixin link_nav_item {
@@ -171,16 +309,29 @@
         width: 100%;
         height: 100%;
         border-bottom: $_nav_hover_bd;
+
+        @media(max-width: 320px) {
+            display: inline;
+            border: none;
+        }
     }
 
     &:active {
         border-bottom: $_nav_active_bd;
         color: $_link_hover_active_red;
+
+        @media(max-width: 320px) {
+            border: none;
+        }
+    }
+
+    @media(max-width: 1024px) {
+        font-size: $_12px;
     }
 }  
 
 @mixin list {
-    @include flex_row();
+    @include flex_row;
     justify-content: space-between;
     text-align: center;
     height: 100%;
@@ -193,6 +344,16 @@
     color: $_bg_white;
     text-transform: uppercase;
     margin-bottom: 1.964375rem;
+
+    @media(max-width: 1024px) {
+        font-size: $_48px;
+        margin-bottom: 3.86625rem;
+    }
+
+    @media(max-width: 320px) {
+        font-size: $_36px;
+        margin-bottom: 2.044375rem;
+    }
 }
 
 @mixin p_header_main_description {
@@ -201,6 +362,16 @@
     text-align: center;
     color: $_bg_white;
     margin-bottom: 4.973125rem;
+
+    @media(max-width: 1024px) {
+        font-size: $_18px;
+        margin-bottom: 5.57125rem;
+    }
+
+    @media(max-width: 320px) {
+        font-size: $_14px;
+        margin-bottom: 3.080625rem;
+    }
 }
 
 @mixin header_main_link {
@@ -226,7 +397,7 @@
     }
 
     @media (max-width: 320px) {
-        width: 280px;
+        width: 250px;
         line-height: 60px;
     }
 }
@@ -244,7 +415,7 @@
     }
 
     @media (max-width: 320px) {
-        padding: .9375rem 2.8125rem;
+        padding: .9375rem 1.875rem;
     }
 }
 
@@ -695,8 +866,9 @@
     padding: 0;
 
     @media (max-width: 320px) {
-        max-height: 538px;
-    }
+         
+
+     }
 }
 
 @mixin swiper_wrap_mb {
@@ -708,13 +880,14 @@
 
     @media (max-width: 320px) {
         margin-bottom: 1.4375rem;
+        max-height: 540px;
     }
 }
 
 @mixin swiper_slide {
     @include flex_row;
     width: 100%;
-    height: 490px;
+    height: 100%;
     overflow: hidden;
 
     @media (max-width: 1024px) {
@@ -723,7 +896,7 @@
 
     @media (max-width: 320px) {
         @include flex_column;
-        height: 538px;
+        height: 540px;
     }
 }
 
@@ -732,6 +905,7 @@
 
     @media (max-width: 320px) {
         width: 100%;
+        height: 219px;
     }
 }
 
@@ -798,9 +972,9 @@
     bottom: 0;
 
     @media (max-width: 320px){
-        right: 118%;
-        transform: rotate(90deg);
-        bottom: -260px;
+         right: 120%;
+         transform: rotate(90deg);
+         bottom: -255px;
     }
 }
 
@@ -816,6 +990,14 @@
 @mixin activebox_download_bg {
     background-color: $_bg_white;
     padding: 7.125rem 0;
+
+    @media(max-width: 1024px) {
+        padding: 4.875rem 0; 
+    }
+
+    @media(max-width: 320px) {
+        padding: 2.1875rem 0 2.8125rem; 
+    }
 }
 
 @mixin download_main_title {
@@ -823,6 +1005,17 @@
     font-weight: $_medium;
     text-align: center;
     line-height: 70px;
+
+    @media(max-width: 1024px) {
+        font-size: $_24px;
+        line-height: 60px; 
+    }
+
+    @media(max-width: 320px) {
+        font-size: $_18px;
+        padding: 1.4375rem 0;
+        line-height: 18px;
+    }
 }
 
 @mixin download_second_title {
@@ -831,6 +1024,37 @@
     text-align: center;
     text-transform: uppercase;
     margin-bottom: 2.981875rem;
+
+    @media(max-width: 1024px) {
+        font-size: $_14px;
+        margin-bottom: 2.6875rem;
+    }
+
+    @media(max-width: 320px) {
+        font-size: $_13px;
+        margin-bottom: .6875rem;
+    }
+}
+@mixin download_link {
+
+    @media(max-width: 320px) {
+        width: 250px;
+    }
+
+}
+
+@mixin download_link_a {
+    padding: 1.5625rem 4.6875rem;
+
+    @media(max-width: 1024px) {
+        font-size: $_18px;
+        padding: 1.875rem 4.6875rem;
+    }
+
+    @media(max-width: 320px) {
+        font-size: $_18px;
+        padding: 1.125rem 2.8125rem;
+    }
 }
 
 // ______________________________________ DOWNLOAD-section //
@@ -840,11 +1064,23 @@
 @mixin activebox_about_bg {
     background-color: $_footer_light_blue;
     padding: 4.44625rem 0 4.19625rem;
+
+    @media(max-width: 1024px) {
+        padding: 2.91rem 0 2.7rem;
+    }
+
+    @media(max-width: 320px) {
+        padding: 2.0625rem 0;
+    }
 }
 
 @mixin about_wrap {
     @include flex_row;
     justify-content: center;
+
+    @media(max-width: 320px) {
+        @include flex_column;
+    }
 }
 
 @mixin about_location_share {
@@ -854,6 +1090,15 @@
     @media (max-width: 1024px) {
         width: 315px;
     }
+
+    @media (max-width: 320px) {
+        width: 250px;
+        margin-bottom: 4.3125rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
 }
 
 @mixin about_title {
@@ -862,12 +1107,30 @@
     color: $_bg_white;
     text-transform: uppercase;
     margin-bottom: 1.8125rem;
+
+    @media(max-width: 1024px) {
+        font-size: $_14px;
+        margin-bottom: 2.04rem;
+    }
+
+    @media(max-width: 320px) {
+        font-size: $_14px;
+        margin-bottom: 2.294375rem;
+    }
 }
 
 @mixin about_text {
     font-size: $_18px;
     font-weight: $_regular;
     color: $_bg_white;
+
+    @media(max-width: 1024px) {
+        font-size: $_14px;
+    }
+
+    @media(max-width: 320px) {
+        font-size: $_14px;
+    }
 }
 
 // ______________________________________ ABOUT-section //
@@ -877,6 +1140,14 @@
 @mixin activebox_copyright_bg {
     background-color: $_footer_dark_blue;
     padding: 1.5rem 0;
+
+    @media(max-width: 1024px) {
+        padding: .875rem 0;
+    }
+
+    @media(max-width: 320px) {
+        padding: 1.75rem 0;
+    }
 }
 
 @mixin copyright_description_block {
@@ -888,6 +1159,14 @@
     font-size: $_18px;
     font-weight: $_regular;
     color: $_footer_text_grey;
+
+    @media(max-width: 1024px) {
+        font-size: $_14px;
+    }
+
+    @media(max-width: 320px) {
+        font-size: $_14px;
+    }
 }
 
 @mixin span_description_copyright {
