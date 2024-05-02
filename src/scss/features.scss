@@ -20,6 +20,7 @@
             }
 
             .card-features-description {
+                @include card_features_description;
 
                 p {
                     @include card_features_description_p;

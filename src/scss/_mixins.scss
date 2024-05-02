@@ -19,19 +19,7 @@
         max-width: 984px;
     }
 
-    @media (max-width: 985px) {
-        max-width: 945px;
-    }
-
-    @media (max-width: 799px) {
-        max-width: 613px;
-    }
-
-    @media (max-width: 614px) {
-        max-width: 427px;
-    }
-
-    @media (max-width: 428px) {
+    @media (max-width: 320px) {
         max-width: 280px;
     }
 }
@@ -127,6 +115,14 @@
         background-color: $_header_mask_blue;
         z-index: 5;
     }
+
+    @media(max-width: 1024px) {
+        padding: 2.25rem 0 7.875rem;
+    }
+
+    @media(max-width: 320px) {
+        padding: 1.3125rem 0 3.25rem;
+    }
 }
 
 @mixin header_nav_wrap {
@@ -136,6 +132,19 @@
 
     &::after {
         @include wrap_line;
+
+        @media(max-width: 320px) {
+            display:none;
+        }
+    }
+
+    @media(max-width: 1024px) {
+        margin-bottom: 9.8125rem;
+    }
+
+    @media(max-width: 320px) {
+        margin-bottom: 3.1075rem;
+        justify-content: space-between;
     }
 }
 
@@ -149,6 +158,14 @@
 
 @mixin mb_logo {
     margin-bottom: 2.243125rem;
+
+    @media(max-width: 1024px) {
+        margin-bottom: 2.3125rem;
+    }
+
+    @media(max-width: 320px) {
+        margin-bottom: 0;
+    }
 }
 
 @mixin logo_title {
@@ -162,12 +179,33 @@
         color: $_bg_white;
         font-weight: $_logo_light;
         margin-left: -.625rem;
+
+        @media(max-width: 320px) {
+            margin-left: -.35rem;
+        }
+    }
+
+    @media(max-width: 320px) {
+        font-size: $_24px;
     }
 }
+
+@mixin nav_header {
+    margin-top: .25rem;
+
+    @media(max-width: 320px) {
+        display: none;
+    }
+}
+
 
 @mixin nav_item {
     width: 134px;
     line-height: 28px;
+
+    @media(max-width: 1024px) {
+        width: 112px;
+    }
 }
 
 @mixin link_nav_item {
@@ -183,16 +221,29 @@
         width: 100%;
         height: 100%;
         border-bottom: $_nav_hover_bd;
+
+        @media(max-width: 320px) {
+            display: inline;
+            border: none;
+        }
     }
 
     &:active {
         border-bottom: $_nav_active_bd;
         color: $_link_hover_active_red;
+
+        @media(max-width: 320px) {
+            border: none;
+        }
+    }
+
+    @media(max-width: 1024px) {
+        font-size: $_12px;
     }
 }  
 
 @mixin list {
-    @include flex_row();
+    @include flex_row;
     justify-content: space-between;
     text-align: center;
     height: 100%;
@@ -205,6 +256,16 @@
     color: $_bg_white;
     text-transform: uppercase;
     margin-bottom: 1.964375rem;
+
+    @media(max-width: 1024px) {
+        font-size: $_48px;
+        margin-bottom: 3.86625rem;
+    }
+
+    @media(max-width: 320px) {
+        font-size: $_36px;
+        margin-bottom: 2.044375rem;
+    }
 }
 
 @mixin p_header_main_description {
@@ -213,6 +274,16 @@
     text-align: center;
     color: $_bg_white;
     margin-bottom: 4.973125rem;
+
+    @media(max-width: 1024px) {
+        font-size: $_18px;
+        margin-bottom: 5.57125rem;
+    }
+
+    @media(max-width: 320px) {
+        font-size: $_14px;
+        margin-bottom: 3.080625rem;
+    }
 }
 
 @mixin header_main_link {
@@ -232,7 +303,17 @@
         background-color: $_link_light_red;
         box-shadow: 4px 4px 30px $_link_light_red;
     }
+
+    @media (max-width: 1024px) {
+        width: 314px;
+    }
+
+    @media (max-width: 320px) {
+        width: 250px;
+        line-height: 60px;
+    }
 }
+
 
 @mixin a_header_main_link {
     font-size: $_24px;
@@ -240,6 +321,14 @@
     text-transform: uppercase;
     color: $_bg_white;
     padding: 1.5625rem 5.6875rem;
+
+    @media (max-width: 1024px) {
+        padding: 1.5625rem 3.75rem;
+    }
+
+    @media (max-width: 320px) {
+        padding: .9375rem 1.875rem;
+    }
 }
 
 // ________________________________________ HEADER-section //
@@ -249,6 +338,14 @@
 @mixin features_bg {
     background-color: $_bg_white;
     padding: 7.25rem 0;
+
+    @media (max-width: 1024px) {
+        padding: 5rem 0;
+    }
+
+    @media (max-width: 320px) {
+        padding: 2.5rem 0;
+    }
 }
 
 @mixin features_grid_wrap {
@@ -261,6 +358,11 @@
     @media (max-width: 1024px) {
         grid-template-columns: repeat(3, minmax(305px, 1fr));
         grid-gap: 49px 20px;
+    }
+
+    @media (max-width: 320px) {
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        row-gap: 49px ;
     }
 }
 
@@ -281,6 +383,13 @@
     @media (max-width: 1024px) {
         width: 85px;
         height: 85px;
+        margin-bottom: 1.47rem;
+    }
+
+    @media (max-width: 320px) {
+        width: 75px;
+        height: 75px;
+        margin-bottom: 1.34rem;
     }
 }
 
@@ -291,26 +400,163 @@
     color: $_title_dark_grey;
     line-height: 72px;
     margin-bottom: 1.276875rem;
+
+    @media (max-width: 1024px) {
+        font-size: $_18px;
+        line-height: 60px;
+        margin-bottom: .25rem;
+    }
+
+    @media (max-width: 320px) {
+        font-size: $_18px;
+        line-height: 50px;
+        margin-bottom: 0;
+    }
+}
+
+@mixin card_features_description {
+    width: 100%;
 }
 
 @mixin card_features_description_p {
     font-size: $_18px;
     font-weight: $_regular;
     color: $_text_grey;
+
+    @media (max-width: 1024px) {
+        font-size: $_14px;
+    }
+
+    @media (max-width: 320px) {
+        font-size: $_14px;
+    }
 }
 
 // ________________________________________ FEATURES-section //
 
-// WORK-section ______________________________________ //
+// WORK-FLEX-section ______________________________________ //
+
+@mixin work_flex_wrap {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    @media (max-width: 320px) {
+        flex-direction: row;
+        }
+}
+
+@mixin work_line {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+
+    @media (max-width: 320px) {
+    flex-direction: column;
+    }
+}
+
+@mixin work_line_item {
+    display: block;
+    width: 380px;
+    height: 340px;
+    border: 1px solid $_bg_white;
+
+    
+    @media (max-width: 1024px) {
+        width: 256px;
+        height: 230px;
+    }
+
+    @media (max-width: 320px) {
+        width: 160px;
+        height: 144px;
+    }
+}
+
+@mixin work_link {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+@mixin title_i_descr {
+    font-size: $_24px;
+    font-weight: $_black;
+    line-height: 60px;
+    margin-bottom: 1.25rem;
+    color: $_bg_white;
+    text-transform: uppercase;
+
+    @media (max-width: 1024px) {
+        font-size: $_18px;
+        line-height: 40px;
+        margin-bottom: .8rem;
+    }
+
+    @media (max-width: 320px) {
+        font-size: $_18px;
+        line-height: 25px;
+        margin-bottom: .29rem;
+    }
+}
+
+@mixin sub_i_descr {
+    font-size: $_18px;
+    font-weight: $_regular;
+    color: $_bg_white;
+
+    @media (max-width: 1024px) {
+        font-size: $_14px;
+    }
+
+    @media (max-width: 320px) {
+        font-size: $_14px;
+    }
+}
+
+@mixin description_block {
+    display: block;
+}
+
+@mixin description_none {
+    display: none;
+}
+
+@mixin link_hover_bg {
+    background-color: $_img_hover_red;
+}
+
+@mixin link_active_bg {
+    background-color: $_img_active_red;
+}
+
+// ______________________________________ WORK-FLEX-section //
+
+// WORK-GRID-section ______________________________________ //
 
 @mixin work_grid {
     max-width: max-content;
     display:grid;
-    grid-template-columns: repeat(4, minmax(378px, 25%));
+    grid-template-columns: repeat(4, minmax(378px, 100%));
+    grid-template-rows: repeat(2, 340px);
     grid-gap: 3px 2px;
 
     @media (max-width: 1024px) {
-        grid-template-columns: repeat(4, minmax(250px, 25%));
+        grid-template-columns: repeat(4, minmax(236px, 100%));
+        grid-template-rows: repeat(2, 210px);
+        grid-gap: 3px 2px;
+    }
+
+    @media (max-width: 320px) {
+        grid-template-columns: repeat(2, minmax(160px, 100%));
+        grid-template-rows: repeat(4, 144px);
+        grid-gap: 1px 1px;
     }
 }
 
@@ -319,8 +565,13 @@
     height: 340px;
 
     @media (max-width: 1024px) {
-        width: 256px;
-        height: 230px;
+        width: 234px;
+        height: 208px;
+    }
+
+    @media (max-width: 320px) {
+        width: 160px;
+        height: 144px;
     }
 }
 
@@ -368,13 +619,21 @@
     color: $_bg_white;
 }
 
-// ______________________________________ WORK-section //
+// ______________________________________ WORK-GRID-section //
 
 // TEAM-section ______________________________________ //
 
 @mixin team_section {
     background-color: $_bg_white;
     padding: 7.125rem 0;
+
+    @media (max-width: 1024px) {
+        padding: 4.875rem 0;
+    }
+
+    @media (max-width: 320px) {
+        padding: 2.1875rem 0;
+    }
 }
 
 @mixin team_grid {
@@ -386,6 +645,11 @@
     @media (max-width: 1024px) {
         grid-template-columns: repeat(4, minmax(227px, 25%));
         grid-column-gap: 25px;
+    }
+
+    @media (max-width: 320px) {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        grid-row-gap: 56px;
     }
 }
 
@@ -399,6 +663,11 @@
         width: 227px;
         height: 227px;
     }
+
+    @media (max-width: 320px) {
+        width: 280px;
+        height: 280px;
+    }
 }
 
 @mixin member_photo_img {
@@ -409,7 +678,15 @@
 }
 
 @mixin member_name {
-    margin-bottom: 1.11625rem;  
+    margin-bottom: 1.11625rem;
+    
+    @media (max-width: 1024px) {
+        margin-bottom: 1.4rem;
+    }
+
+    @media (max-width: 320px) {
+        margin-bottom: 2.4rem;
+    }
 }
 
 @mixin member_name_h2 {
@@ -418,6 +695,17 @@
     color: $_title_dark_grey;
     text-align: left;
     margin-bottom: .33125rem;
+
+    @media (max-width: 1024px) {
+        font-size: $_18px;
+        margin-bottom: .2875rem;
+    }
+
+    @media (max-width: 320px) {
+        font-size: $_18px;
+        margin-bottom: .43rem;
+
+    }
 }
 
 @mixin member_name_p {
@@ -426,11 +714,27 @@
     color: $_link_light_red;
     text-transform: uppercase;
     text-align: left;
+
+    @media (max-width: 1024px) {
+        font-size: $_14px;
+        }
+
+    @media (max-width: 320px) {
+        font-size: $_14px;
+    }
 }
 
 @mixin member_description {
     width: 100%;
     margin-bottom: 2.36625rem;
+
+    @media (max-width: 1024px) {
+        margin-bottom: 2.45rem;
+        }
+
+    @media (max-width: 320px) {
+        margin-bottom: 3.45rem;;
+    }
 }
 
 @mixin member_description_p {
@@ -438,6 +742,14 @@
     font-weight: $_regular;
     color: $_text_grey;
     text-align: left;
+
+    @media (max-width: 1024px) {
+        font-size: $_14px;
+        }
+
+    @media (max-width: 320px) {
+        font-size: $_14px;
+    }
 }
 
 @mixin team_social_item {
@@ -464,31 +776,73 @@
     max-width: max-content;
     margin: 0 auto;
     padding: 0;
+
+    @media (max-width: 320px) {
+         
+
+     }
 }
 
 @mixin swiper_wrap_mb {
     margin-bottom: 1.9375rem;
+
+    @media (max-width: 1024px) {
+        margin-bottom: 1.5rem;
+    }
+
+    @media (max-width: 320px) {
+        margin-bottom: 1.4375rem;
+        max-height: 540px;
+    }
 }
 
 @mixin swiper_slide {
     @include flex_row;
     width: 100%;
-    height: 490px;
+    height: 100%;
     overflow: hidden;
+
+    @media (max-width: 1024px) {
+        height: 332px;
+    }
+
+    @media (max-width: 320px) {
+        @include flex_column;
+        height: 540px;
+    }
 }
 
 @mixin img_slide {
     width: 50%;
+
+    @media (max-width: 320px) {
+        width: 100%;
+        height: 219px;
+    }
 }
 
 @mixin description_slide {
     width: 50%;
     background-color: $_bg_swapper;
+
+    @media (max-width: 320px) {
+        width: 100%;
+    }
 }
 
 @mixin description_wrap_slide {
     margin: 7.25rem auto;
     width: 471px;
+
+    @media (max-width: 1024px) {
+        margin: 2.9375rem auto 6.875rem;
+        width: 330px;
+    }
+
+    @media (max-width: 320px) {
+        margin: 0 auto 5.9375rem;
+        width: 275px;
+    }
 }
 
 @mixin description_title {
@@ -497,6 +851,17 @@
     font-style: italic;
     color: $_bg_white;
     padding: 1.6875rem 0;
+
+    @media (max-width: 1024px) {
+        font-size: $_24px;
+        padding: 1.3125rem 0;
+    }
+
+    @media (max-width: 320px) {
+        font-size: $_24px;
+        padding: 1.8125rem 0;
+        text-align: center;
+    }
 }
 
 @mixin description_p_slide {
@@ -504,10 +869,25 @@
     font-weight: $_bold;
     color: $_bg_white;
     text-transform: uppercase;
+
+    @media (max-width: 1024px) {
+        font-size: $_12px;
+    }
+
+    @media (max-width: 320px) {
+        font-size: $_12px;
+        text-align: center;
+    }
 }
 
 @mixin swiper_pagination_b {
     bottom: 0;
+
+    @media (max-width: 320px){
+         right: 120%;
+         transform: rotate(90deg);
+         bottom: -255px;
+    }
 }
 
 @mixin pagination_bullet {
@@ -522,6 +902,14 @@
 @mixin activebox_download_bg {
     background-color: $_bg_white;
     padding: 7.125rem 0;
+
+    @media(max-width: 1024px) {
+        padding: 4.875rem 0; 
+    }
+
+    @media(max-width: 320px) {
+        padding: 2.1875rem 0 2.8125rem; 
+    }
 }
 
 @mixin download_main_title {
@@ -529,6 +917,17 @@
     font-weight: $_medium;
     text-align: center;
     line-height: 70px;
+
+    @media(max-width: 1024px) {
+        font-size: $_24px;
+        line-height: 60px; 
+    }
+
+    @media(max-width: 320px) {
+        font-size: $_18px;
+        padding: 1.4375rem 0;
+        line-height: 18px;
+    }
 }
 
 @mixin download_second_title {
@@ -537,6 +936,37 @@
     text-align: center;
     text-transform: uppercase;
     margin-bottom: 2.981875rem;
+
+    @media(max-width: 1024px) {
+        font-size: $_14px;
+        margin-bottom: 2.6875rem;
+    }
+
+    @media(max-width: 320px) {
+        font-size: $_13px;
+        margin-bottom: .6875rem;
+    }
+}
+@mixin download_link {
+
+    @media(max-width: 320px) {
+        width: 250px;
+    }
+
+}
+
+@mixin download_link_a {
+    padding: 1.5625rem 4.6875rem;
+
+    @media(max-width: 1024px) {
+        font-size: $_18px;
+        padding: 1.875rem 4.6875rem;
+    }
+
+    @media(max-width: 320px) {
+        font-size: $_18px;
+        padding: 1.125rem 2.8125rem;
+    }
 }
 
 // ______________________________________ DOWNLOAD-section //
@@ -546,11 +976,23 @@
 @mixin activebox_about_bg {
     background-color: $_footer_light_blue;
     padding: 4.44625rem 0 4.19625rem;
+
+    @media(max-width: 1024px) {
+        padding: 2.91rem 0 2.7rem;
+    }
+
+    @media(max-width: 320px) {
+        padding: 2.0625rem 0;
+    }
 }
 
 @mixin about_wrap {
     @include flex_row;
     justify-content: center;
+
+    @media(max-width: 320px) {
+        @include flex_column;
+    }
 }
 
 @mixin about_location_share {
@@ -560,6 +1002,15 @@
     @media (max-width: 1024px) {
         width: 315px;
     }
+
+    @media (max-width: 320px) {
+        width: 250px;
+        margin-bottom: 4.3125rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
 }
 
 @mixin about_title {
@@ -568,12 +1019,30 @@
     color: $_bg_white;
     text-transform: uppercase;
     margin-bottom: 1.8125rem;
+
+    @media(max-width: 1024px) {
+        font-size: $_14px;
+        margin-bottom: 2.04rem;
+    }
+
+    @media(max-width: 320px) {
+        font-size: $_14px;
+        margin-bottom: 2.294375rem;
+    }
 }
 
 @mixin about_text {
     font-size: $_18px;
     font-weight: $_regular;
     color: $_bg_white;
+
+    @media(max-width: 1024px) {
+        font-size: $_14px;
+    }
+
+    @media(max-width: 320px) {
+        font-size: $_14px;
+    }
 }
 
 // ______________________________________ ABOUT-section //
@@ -583,6 +1052,14 @@
 @mixin activebox_copyright_bg {
     background-color: $_footer_dark_blue;
     padding: 1.5rem 0;
+
+    @media(max-width: 1024px) {
+        padding: .875rem 0;
+    }
+
+    @media(max-width: 320px) {
+        padding: 1.75rem 0;
+    }
 }
 
 @mixin copyright_description_block {
@@ -594,6 +1071,14 @@
     font-size: $_18px;
     font-weight: $_regular;
     color: $_footer_text_grey;
+
+    @media(max-width: 1024px) {
+        font-size: $_14px;
+    }
+
+    @media(max-width: 320px) {
+        font-size: $_14px;
+    }
 }
 
 @mixin span_description_copyright {
