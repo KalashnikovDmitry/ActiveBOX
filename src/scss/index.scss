@@ -1,0 +1,33 @@
+@import './var';
+@import './mixins';
+@import './cdn.scss';
+@import './header.scss';
+@import './features.scss';
+@import './work-flex.scss';
+@import './work-grid.scss';
+@import './our-team.scss';
+@import './testimonials.scss';
+@import './download.scss';
+@import './about.scss';
+@import './copyright.scss';
+
+* {
+    @include html_body_content;
+}
+
+html {
+    @include html_font_family;
+}
+
+.container {
+    @include container;
+}
+
+.social-item {
+    @include social_item;
+}
+
+.fa-brands {
+    @include social_brands;
+}
+

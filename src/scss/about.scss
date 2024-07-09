@@ -1,0 +1,69 @@
+.activebox-about {
+    @include activebox_about_bg;
+
+    .about-wrap {
+        @include about_wrap;
+
+        .location {
+            @include about_location_share;
+
+            .about-title {
+                @include about_title;
+            }
+
+            .about-text {
+                @include about_text;
+            }
+        }
+
+        .share {
+            @include about_location_share;
+
+            .about-title {
+                @include about_title;
+            }
+
+            .member-social {
+                @include flex_row;
+                justify-content: center;
+
+                .social-item {
+                    @include team_social_item;
+                    margin-right: 1.6875rem;
+
+                    a {
+                        @include social_item_a;
+
+                        .fa-square-facebook {
+                            @include facebook_hover;
+                        }
+                    
+                        .fa-square-x-twitter {
+                            @include x_twitter_hover;
+                        }
+                    
+                        .fa-linkedin {
+                            @include linkedin_hover;
+                        }
+                    }
+
+                    &:hover {
+                        background-color: $_bg_white;
+                    }
+                }
+            }
+        }
+
+        .about {
+            @include about_location_share;
+
+            .about-title {
+                @include about_title;
+            }
+
+            .about-text {
+                @include about_text;
+            }
+        }
+    }
+}

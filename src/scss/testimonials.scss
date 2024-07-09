@@ -1,0 +1,49 @@
+.activebox-testimonials {
+
+    .swiper {
+        @include swiper_options;
+
+        .swiper-wrapper {
+            @include swiper_wrap_mb;
+
+            .swiper-slide {
+                @include swiper_slide;
+
+                .img-slide {
+                    @include img_slide;
+
+                    img {
+                        @include photo_img_options;
+                    }
+                }
+
+                .description-slide {
+                    @include description_slide;
+
+                    .description-wrap {
+                        @include description_wrap_slide;
+
+                        .description-title-slide {
+                            @include description_title;
+                        }
+    
+                        .main-description-slide {
+                            @include description_p_slide;
+                        }
+                    }
+                }
+
+            }
+        }
+
+
+        .swiper-pagination {
+            @include swiper_pagination_b;
+
+            .swiper-pagination-bullet {
+                @include pagination_bullet;
+            }
+        }
+    }
+
+}

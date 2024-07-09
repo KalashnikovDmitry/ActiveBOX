@@ -1,0 +1,55 @@
+// Colors //
+
+$_bg_white: #fff;
+$_bd_light_grey: #BABBC5;
+$_logo_grey: #656980;
+$_title_dark_grey: #2D3033;
+$_text_grey: #6C7279;
+$_link_light_red: #FF4343;
+$_img_hover_red: rgba(255, 67, 67, 0.8);
+$_img_active_red: rgba(185, 12, 12, 0.8);
+$_header_mask_blue: rgba(37, 43, 73, 0.8);
+$_footer_light_blue: rgba(53, 60, 101, 1);
+$_footer_dark_blue: rgba(44, 49, 84, 1);
+$_footer_text_grey: #808080;
+$_icon_bd_grey: rgba(198, 203, 205, 1);
+$_title_black: #000;
+$_link_hover_active_red: #E71414;
+$_facebook: rgb(66, 103, 178);
+$_x_twitter: #14171A;
+$_linkedin: #0e76a8;
+$_bg_swapper: rgba(92, 50, 73, 1);
+$_bg_bullet_swapper: rgba(126, 93, 111, 1);
+
+// Font-family //
+
+$_raleway: 'Raleway';
+$_sans_serif: 'sans-serif';
+$_font_awesome_6_free: 'Font Awesome 6 Free';
+$_cardo: 'Cardo';
+
+// Font-size //
+
+$_64px: 4rem;
+$_48px: 3rem; 
+$_36px: 2.25rem;
+$_30px: 1.875rem;
+$_24px: 1.5rem;
+$_18px: 1.125rem;
+$_14px: .875rem;
+$_13px: .8125rem;
+$_12px: .75rem;
+
+// Font-weight //
+
+$_black: 900;
+$_bold: 700;
+$_regular: 400;
+$_logo_light: 200;
+$_medium: 500;
+
+
+// Border //
+$_nav_hover_bd: 3px solid $_bd_light_grey;
+$_nav_active_bd: 3px solid $_link_hover_active_red;
+$_icon_bd: 1px solid $_icon_bd_grey;

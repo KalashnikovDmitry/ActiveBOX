@@ -1,0 +1,88 @@
+.activebox-work {
+
+    .work-flex-wrap {
+        @include work_flex_wrap;
+
+        .work-line {
+            @include work_line;
+
+            .work-line-item {
+                @include work_line_item;
+
+                .work-link {
+                    @include work_link;
+
+                    .item-description {
+                        @include description_none;
+
+                        .title-i-descr {
+                            @include title_i_descr;
+                        }
+
+                        .sub-i-descr {
+                            @include sub_i_descr;
+                        }
+
+                    }
+
+                    &:hover {
+                        @include link_hover_bg;
+
+                        .item-description {
+                            @include description_block;
+                        }
+                    }
+
+                    &:active {
+                        @include link_active_bg;
+
+                        .item-description {
+                            @include description_block;
+                        }
+                    }
+                }
+            }
+            
+                
+            #work_1 {
+                @include bg_options;
+                background-image: url("../img/work/work_1.png");
+            }
+
+            #work_2 {
+                @include bg_options;
+                background-image: url("../img/work/work_2.png");
+            }
+
+            #work_3 {
+                @include bg_options;
+                background-image: url("../img/work/work_3.png");
+            }
+
+            #work_4 {
+                @include bg_options;
+                background-image: url("../img/work/work_4.png");
+            }
+
+            #work_5 {
+                @include bg_options;
+                background-image: url("../img/work/work_5.png");
+            }
+
+            #work_6 {
+                @include bg_options;
+                background-image: url("../img/work/work_6.png");
+            }
+
+            #work_7 {
+                @include bg_options;
+                background-image: url("../img/work/work_7.png");
+            }
+
+            #work_8 {
+                @include bg_options;
+                background-image: url("../img/work/work_8.png");
+            }
+        }
+    }
+}

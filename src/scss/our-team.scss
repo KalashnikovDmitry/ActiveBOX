@@ -1,0 +1,62 @@
+.activebox-our-team {
+    @include team_section;
+
+    .team-grid {
+        @include team_grid;
+
+        .team-member {
+
+            .member-photo {
+                @include member_photo;
+                
+                img {
+                    @include member_photo_img;
+                }
+            }
+
+            .member-name {
+                @include member_name;
+
+                h2 {
+                    @include member_name_h2;
+                }
+
+                p {
+                    @include member_name_p;
+                }
+            }
+
+            .member-description {
+                @include member_description;
+
+                p {
+                    @include member_description_p;
+                }
+            }
+
+            .member-social {
+                @include flex_row;
+
+                .social-item {
+                    @include team_social_item;
+
+                    a {
+                        @include social_item_a;
+
+                        .fa-square-facebook {
+                            @include facebook_hover;
+                        }
+                    
+                        .fa-square-x-twitter {
+                            @include x_twitter_hover;
+                        }
+                    
+                        .fa-linkedin {
+                            @include linkedin_hover;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

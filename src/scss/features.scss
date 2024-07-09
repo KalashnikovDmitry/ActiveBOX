@@ -1,0 +1,31 @@
+.activebox-features {
+    @include features_bg;
+
+    .features-grid-wrap {
+        @include features_grid_wrap;
+
+        .grid-features-item {
+            @include grid_features_item;
+            
+            .card-features-img {
+                @include card_features_img;
+
+                img {
+                    @include photo_img_options;
+                }
+            }
+
+            .card-features-title {
+                @include card_features_title;
+            }
+
+            .card-features-description {
+                @include card_features_description;
+
+                p {
+                    @include card_features_description_p;
+                }
+            }          
+        }
+    }
+}
